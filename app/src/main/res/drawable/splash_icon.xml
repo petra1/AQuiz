@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This drawable is used as the splash screen icon for the application.
+     It layers the foreground and background of the logo to create the final icon. -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/ic_logo_background" />
+    <item android:drawable="@drawable/ic_logo_foreground" android:gravity="right" />
+</layer-list>

@@ -15,10 +15,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
+        android:accessibilityHeading="true"
         android:gravity="center_horizontal"
         android:text="Questions"
         android:textColor="@color/white"
-
         android:textSize="60sp" />
 
 
@@ -36,13 +36,12 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_margin="20dp"
+            android:accessibilityLiveRegion="polite"
             android:gravity="center_horizontal"
             android:text="For what stands WCAG? "
             android:textColor="#006400"
             android:textSize="20sp"
             android:textStyle="bold" />
-
-
     </androidx.cardview.widget.CardView>
 
     <RadioGroup
@@ -92,26 +91,19 @@
             android:text="Web Content Accessibility Guidelines"
             android:textColor="@color/white"
             android:textSize="20sp"
+            android:textStyle="bold"
             app:buttonTint="@color/white" />
     </RadioGroup>
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btnSubmit"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-
-            android:layout_marginTop="40dp"
-            android:background="@color/white"
-            android:text="Next"
-            android:textColor="#006400"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-
-
-
-
-
-
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnSubmit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:layout_marginTop="40dp"
+        android:background="@color/white"
+        android:text="Next"
+        android:textColor="#006400"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 </LinearLayout>
