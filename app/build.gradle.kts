@@ -32,7 +32,8 @@ android {
         targetCompatibility = JavaVersion.VERSION_11
     }
     buildFeatures {
-        viewBinding = true
+        // Das ist die entscheidende Änderung!
+        dataBinding = true
     }
 }
 
