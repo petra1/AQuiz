@@ -1,5 +1,6 @@
 package ch.ritter1.apps.aquiz;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.activity.EdgeToEdge;
@@ -9,6 +10,7 @@ import androidx.core.splashscreen.SplashScreen;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import ch.ritter1.apps.aquiz.databinding.ActivityQuizBinding;
@@ -47,15 +49,39 @@ public class QuizActivity extends AppCompatActivity {
             showQuestion();
         }
         binding.btnSubmit.setOnClickListener(v -> {
+            int userAnswer = -1;
+            int selectedId = binding.radioGroup.getCheckedRadioButtonId();
+            if (selectedId == binding.radioBt1.getId()) {
+                userAnswer = 0;
+            } else if (selectedId == binding.radioBt2.getId()) {
+                userAnswer = 1;
+            } else if (selectedId == binding.radioBt3.getId()) {
+                userAnswer = 2;
+            } else if (selectedId == binding.radioBt4.getId()) {
+                userAnswer = 3;
+            }
+            Question currentQuestion = questionList.get(currentQuestionIndex);
+            currentQuestion.setUserAnswerIndex(userAnswer);
+
+
+
+
+
+
             currentQuestionIndex++;
+
             if (currentQuestionIndex < questionList.size()) {
                 showQuestion();
             } else {
+                Intent intent = new Intent(QuizActivity.this, ResultsActivity.class);
+                intent.putParcelableArrayListExtra("EXTRA_QUESTIONS", new ArrayList<>(questionList));
+                startActivity(intent);
                 binding.btnSubmit.setEnabled(false);
                 binding.btnSubmit.setText("Quiz finished");
             }
 
         });
+
     }
 
     private void showQuestion() {
