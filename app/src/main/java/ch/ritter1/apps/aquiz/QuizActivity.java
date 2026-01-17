@@ -21,13 +21,6 @@ public class QuizActivity extends AppCompatActivity {
     private List<Question>  questionList;
     private int currentQuestionIndex = 0;
 
-
-
-
-
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,49 +43,41 @@ public class QuizActivity extends AppCompatActivity {
         }
         binding.btnSubmit.setOnClickListener(v -> {
             int userAnswer = -1;
-            int selectedId = binding.radioGroup.getCheckedRadioButtonId();
-            if (selectedId == binding.radioBt1.getId()) {
+            int selectedId = binding.rgAnswers.getCheckedRadioButtonId();
+            if (selectedId == binding.rbAnswer1.getId()) {
                 userAnswer = 0;
-            } else if (selectedId == binding.radioBt2.getId()) {
+            } else if (selectedId == binding.rbAnswer2.getId()) {
                 userAnswer = 1;
-            } else if (selectedId == binding.radioBt3.getId()) {
+            } else if (selectedId == binding.rbAnswer3.getId()) {
                 userAnswer = 2;
-            } else if (selectedId == binding.radioBt4.getId()) {
+            } else if (selectedId == binding.rbAnswer4.getId()) {
                 userAnswer = 3;
             }
             Question currentQuestion = questionList.get(currentQuestionIndex);
             currentQuestion.setUserAnswerIndex(userAnswer);
-
-
-
-
-
 
             currentQuestionIndex++;
 
             if (currentQuestionIndex < questionList.size()) {
                 showQuestion();
             } else {
+                binding.btnSubmit.setEnabled(false);
+                binding.btnSubmit.setText(getString(R.string.quiz_finished));
+
                 Intent intent = new Intent(QuizActivity.this, ResultsActivity.class);
                 intent.putParcelableArrayListExtra("EXTRA_QUESTIONS", new ArrayList<>(questionList));
                 startActivity(intent);
-                binding.btnSubmit.setEnabled(false);
-                binding.btnSubmit.setText("Quiz finished");
             }
-
         });
-
     }
 
     private void showQuestion() {
-        binding.radioGroup.clearCheck();
+        binding.rgAnswers.clearCheck();
         Question currentQuestion = questionList.get(currentQuestionIndex);
-        binding.textViewQuestions.setText(currentQuestion.getQuestion());
-        binding.radioBt1.setText(currentQuestion.getAnswer1());
-        binding.radioBt2.setText(currentQuestion.getAnswer2());
-        binding.radioBt3.setText(currentQuestion.getAnswer3());
-        binding.radioBt4.setText(currentQuestion.getAnswer4());
+        binding.tvQuestionText.setText(currentQuestion.getQuestion());
+        binding.rbAnswer1.setText(currentQuestion.getAnswer1());
+        binding.rbAnswer2.setText(currentQuestion.getAnswer2());
+        binding.rbAnswer3.setText(currentQuestion.getAnswer3());
+        binding.rbAnswer4.setText(currentQuestion.getAnswer4());
     }
-
-
 }

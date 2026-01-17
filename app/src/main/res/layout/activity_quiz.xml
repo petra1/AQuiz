@@ -19,7 +19,7 @@
             android:layout_margin="20dp"
             android:accessibilityHeading="true"
             android:gravity="center_horizontal"
-            android:text="Questions"
+            android:text="@string/title_questions"
             android:textColor="@color/white"
             android:textSize="60sp" />
 
@@ -33,64 +33,64 @@
             app:cardCornerRadius="25sp">
 
             <TextView
-                android:id="@+id/textViewQuestions"
+                android:id="@+id/tv_question_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_margin="20dp"
                 android:accessibilityLiveRegion="polite"
                 android:gravity="center_horizontal"
-                android:text="For what stands WCAG? "
+                tools:text="For what stands WCAG? "
                 android:textColor="#006400"
                 android:textSize="20sp"
                 android:textStyle="bold" />
         </androidx.cardview.widget.CardView>
 
         <RadioGroup
-            android:id="@+id/radioGroup"
+            android:id="@+id/rg_answers"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp">
 
             <androidx.appcompat.widget.AppCompatRadioButton
-                android:id="@+id/radio_bt1"
+                android:id="@+id/rb_answer_1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="20dp"
-                android:text="Web Content Accessibility Guidelines"
+                tools:text="Web Content Accessibility Guidelines"
                 android:textColor="@color/white"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 app:buttonTint="@color/white" />
 
             <androidx.appcompat.widget.AppCompatRadioButton
-                android:id="@+id/radio_bt2"
+                android:id="@+id/rb_answer_2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="20dp"
-                android:text="Web Content Accessibility Guidelines"
+                tools:text="Web Content Accessibility Guidelines"
                 android:textColor="@color/white"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 app:buttonTint="@color/white" />
 
             <androidx.appcompat.widget.AppCompatRadioButton
-                android:id="@+id/radio_bt3"
+                android:id="@+id/rb_answer_3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="20dp"
-                android:text="Web Content Accessibility Guidelines"
+                tools:text="Web Content Accessibility Guidelines"
                 android:textColor="@color/white"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 app:buttonTint="@color/white" />
 
             <androidx.appcompat.widget.AppCompatRadioButton
-                android:id="@+id/radio_bt4"
+                android:id="@+id/rb_answer_4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="20dp"
-                android:text="Web Content Accessibility Guidelines"
+                tools:text="Web Content Accessibility Guidelines"
                 android:textColor="@color/white"
                 android:textSize="20sp"
                 android:textStyle="bold"
@@ -98,13 +98,13 @@
         </RadioGroup>
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btnSubmit"
+            android:id="@+id/btn_submit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
             android:layout_marginTop="40dp"
             android:background="@color/white"
-            android:text="Next"
+            android:text="@string/button_submit"
             android:textColor="#006400"
             android:textSize="20sp"
             android:textStyle="bold" />

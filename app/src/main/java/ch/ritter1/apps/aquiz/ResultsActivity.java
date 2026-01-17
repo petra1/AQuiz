@@ -8,6 +8,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import ch.ritter1.apps.aquiz.databinding.ActivityResultsBinding;
@@ -21,12 +22,8 @@ public class ResultsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
 
-
         binding = ActivityResultsBinding.inflate(getLayoutInflater());
-
-
         setContentView(binding.getRoot());
-
 
         ViewCompat.setOnApplyWindowInsetsListener(binding.main, (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
@@ -34,9 +31,7 @@ public class ResultsActivity extends AppCompatActivity {
             return insets;
         });
 
-
         List<Question> questionList = getIntent().getParcelableArrayListExtra("EXTRA_QUESTIONS");
-
 
         int correctAnswers = 0;
         int wrongAnswers = 0;
@@ -50,8 +45,12 @@ public class ResultsActivity extends AppCompatActivity {
             }
         }
 
+        // Hier wird jetzt die String-Ressource für den Text verwendet
+        String correctText = getString(R.string.results_correct_answers) + " " + correctAnswers;
+        binding.tvCorrectAnswers.setText(correctText);
 
-        binding.tvCorrectAnswers.setText("Richtige Antworten: " + correctAnswers);
-        binding.tvWrongAnswers.setText("Falsche Antworten: " + wrongAnswers);
+        // und auch hier
+        String wrongText = getString(R.string.results_wrong_answers) + " " + wrongAnswers;
+        binding.tvWrongAnswers.setText(wrongText);
     }
 }

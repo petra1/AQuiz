@@ -3,35 +3,56 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.appcompat.widget.LinearLayoutCompat
         android:id="@+id/main"
         android:layout_width="match_parent"
+        android:background="@drawable/gradient"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
         android:layout_height="match_parent"
         tools:context=".ResultsActivity">
 
         <TextView
-            android:id="@+id/tv_correct_answers"
+            android:id="@+id/tv_results_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="24sp"
-            app:layout_constraintBottom_toTopOf="@+id/tv_wrong_answers"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_chainStyle="packed"
-            tools:text="Richtige Antworten: 8" />
+            android:layout_margin="20dp"
+            android:accessibilityHeading="true"
+            android:gravity="center_horizontal"
+            android:text="@string/results"
+            android:textColor="@color/white"
+            android:textSize="60sp" />
 
-        <TextView
-            android:id="@+id/tv_wrong_answers"
-            android:layout_width="wrap_content"
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:textSize="24sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_correct_answers"
-            tools:text="Falsche Antworten: 2" />
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="8dp"
+            app:cardCornerRadius="25sp">
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:id="@+id/tv_summary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="20dp"
+
+                android:text="@string/results_summary"
+                android:textColor="#006400"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+        </androidx.cardview.widget.CardView>
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:id="@+id/rv_results"
+                />
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
 </layout>

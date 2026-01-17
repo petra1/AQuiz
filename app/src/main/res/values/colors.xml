@@ -2,4 +2,13 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!-- Farben für Antwort-Status -->
+    <color name="answer_correct_green">#4CAF50</color>
+    <color name="answer_wrong_red">#FF2500</color>
+
+    <!-- Farben für den Hintergrund-Gradienten -->
+    <color name="gradient_start_green">#006400</color>
+    <color name="gradient_center_green">#369236</color>
+    <color name="gradient_end_green">#5BC65B</color>
 </resources>

@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">A Quiz</string>
+
+    <!-- QuizActivity -->
+    <string name="title_questions">Questions</string>
+    <string name="button_submit">Submit</string>
+    <string name="quiz_finished">Quiz Finished</string>
+
+    <!-- ResultsActivity -->
+    <string name="results_correct_answers">Correct Answers:</string>
+    <string name="results_wrong_answers">Wrong Answers:</string>
+    <string name="results">Results</string>
+
+    <!-- NEU: String für die Zusammenfassung mit Platzhaltern -->
+    <string name="results_summary">You have answered %1$d of %2$d questions correctly</string>
+
+
 </resources>
