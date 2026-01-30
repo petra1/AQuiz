@@ -1,18 +1,72 @@
 <resources>
     <string name="app_name">A Quiz</string>
 
-    <!-- QuizActivity -->
+    <!-- UI Strings -->
     <string name="title_questions">Questions</string>
     <string name="button_submit">Submit</string>
     <string name="quiz_finished">Quiz Finished</string>
-
-    <!-- ResultsActivity -->
-    <string name="results_correct_answers">Correct Answers:</string>
-    <string name="results_wrong_answers">Wrong Answers:</string>
     <string name="results">Results</string>
-
-    <!-- NEU: String für die Zusammenfassung mit Platzhaltern -->
     <string name="results_summary">You have answered %1$d of %2$d questions correctly</string>
+    <string name="button_restart">Restart</string>
+    <string name="button_exit">Exit</string>
+    <string name="toast_no_answer">Please select an answer</string>
 
+    <!-- Quiz Questions -->
+
+    <!-- Question 1 -->
+    <string name="q1_text">What does WCAG stand for?</string>
+    <string name="q1_answer1">Web Content Adaptation Guide</string>
+    <string name="q1_answer2">Web Content Accessibility Guidelines</string>
+    <string name="q1_answer3">World Consortium for Accessible Graphics</string>
+    <string name="q1_answer4">Website Compliance and Governance</string>
+
+    <!-- Question 2 -->
+    <string name="q2_text">Which of these is NOT a principle of WCAG?</string>
+    <string name="q2_answer1">Perceivable</string>
+    <string name="q2_answer2">Operable</string>
+    <string name="q2_answer3">Relatable</string>
+    <string name="q2_answer4">Understandable</string>
+
+    <!-- Question 3 -->
+    <string name="q3_text">What is the purpose of \'alt text\' for an image?</string>
+    <string name="q3_answer1">To provide a title for the image</string>
+    <string name="q3_answer2">To copyright the image</string>
+    <string name="q3_answer3">To describe the visual content for screen readers</string>
+    <string name="q3_answer4">To improve image loading speed</string>
+
+    <!-- Question 4 -->
+    <string name="q4_text">A color contrast ratio of at least 4.5:1 is required for normal text to meet which WCAG level?</string>
+    <string name="q4_answer1">A</string>
+    <string name="q4_answer2">AAA</string>
+    <string name="q4_answer3">It\'s not a requirement</string>
+    <string name="q4_answer4">AA</string>
+
+    <!-- Question 5 -->
+    <string name="q5_text">What does ARIA stand for in web development?</string>
+    <string name="q5_answer1">Accessible Rich Internet Applications</string>
+    <string name="q5_answer2">Advanced Responsive Interface Actions</string>
+    <string name="q5_answer3">Automated Readability Indexing Algorithm</string>
+    <string name="q5_answer4">Accessible Resource for Interactive Audio</string>
+
+    <!-- Question 6 -->
+    <string name="q6_text">Which HTML element is most appropriate for the primary heading on a page?</string>
+    <string name="q6_answer1">&lt;strong&gt;</string>
+    <string name="q6_answer2">&lt;h1&gt;</string>
+    <string name="q6_answer3">&lt;header&gt;</string>
+    <string name="q6_answer4">&lt;div class=\'heading\'gt;</string>
+
+    <!-- Question 7 -->
+    <string name="q7_text">How can you make a website navigable for keyboard-only users?</string>
+    <string name="q7_answer1">Using JavaScript to disable the mouse</string>
+    <string name="q7_answer2">Providing a sitemap</string>
+    <string name="q7_answer3">Ensuring all interactive elements have a visible focus state</string>
+    <string name="q7_answer4">Making all text larger</string>
+
+    <!-- Question 8 -->
+    <string name="q8_text">What is a common recommended minimum touch target size for mobile accessibility?</string>
+    <string name="q8_answer1">24x24 pixels</string>
+    <string name="q8_answer2">36x36 pixels</string>
+    <string name="q8_answer3">There is no recommendation</string>
+    <string name="q8_answer4">48x48 pixels</string>
 
 </resources>

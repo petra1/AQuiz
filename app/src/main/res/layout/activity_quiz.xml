@@ -41,7 +41,7 @@
                 android:accessibilityLiveRegion="polite"
                 android:gravity="center_horizontal"
                 tools:text="For what stands WCAG? "
-                android:textColor="#006400"
+                android:textColor="@color/gradient_start_green"
                 android:textSize="20sp"
                 android:textStyle="bold" />
         </androidx.cardview.widget.CardView>
@@ -105,7 +105,7 @@
             android:layout_marginTop="40dp"
             android:background="@color/white"
             android:text="@string/button_submit"
-            android:textColor="#006400"
+            android:textColor="@color/gradient_start_green"
             android:textSize="20sp"
             android:textStyle="bold" />
     </LinearLayout>

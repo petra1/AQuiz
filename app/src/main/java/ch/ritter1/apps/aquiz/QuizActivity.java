@@ -2,6 +2,7 @@ package ch.ritter1.apps.aquiz;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -42,8 +43,15 @@ public class QuizActivity extends AppCompatActivity {
             showQuestion();
         }
         binding.btnSubmit.setOnClickListener(v -> {
-            int userAnswer = -1;
             int selectedId = binding.rgAnswers.getCheckedRadioButtonId();
+
+            // Check if an answer has been selected
+            if (selectedId == -1) {
+                // No answer selected, show a toast message and do nothing else
+                Toast.makeText(QuizActivity.this, R.string.toast_no_answer, Toast.LENGTH_SHORT).show();
+                return; // Stop further execution
+            }
+            int userAnswer = -1;
             if (selectedId == binding.rbAnswer1.getId()) {
                 userAnswer = 0;
             } else if (selectedId == binding.rbAnswer2.getId()) {
@@ -53,6 +61,7 @@ public class QuizActivity extends AppCompatActivity {
             } else if (selectedId == binding.rbAnswer4.getId()) {
                 userAnswer = 3;
             }
+
             Question currentQuestion = questionList.get(currentQuestionIndex);
             currentQuestion.setUserAnswerIndex(userAnswer);
 
@@ -68,6 +77,8 @@ public class QuizActivity extends AppCompatActivity {
                 intent.putParcelableArrayListExtra("EXTRA_QUESTIONS", new ArrayList<>(questionList));
                 startActivity(intent);
             }
+
+
         });
     }
 

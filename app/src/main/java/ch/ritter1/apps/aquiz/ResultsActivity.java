@@ -1,5 +1,6 @@
 package ch.ritter1.apps.aquiz;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.activity.EdgeToEdge;
@@ -7,8 +8,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import ch.ritter1.apps.aquiz.databinding.ActivityResultsBinding;
@@ -34,23 +35,38 @@ public class ResultsActivity extends AppCompatActivity {
         List<Question> questionList = getIntent().getParcelableArrayListExtra("EXTRA_QUESTIONS");
 
         int correctAnswers = 0;
-        int wrongAnswers = 0;
+        int totalQuestions = 0;
         if (questionList != null) {
+            totalQuestions = questionList.size();
             for (Question question : questionList) {
                 if (question.getUserAnswerIndex() == question.getCorrectAnswerIndex()) {
                     correctAnswers++;
-                } else {
-                    wrongAnswers++;
                 }
             }
         }
 
-        // Hier wird jetzt die String-Ressource für den Text verwendet
-        String correctText = getString(R.string.results_correct_answers) + " " + correctAnswers;
-        binding.tvCorrectAnswers.setText(correctText);
 
-        // und auch hier
-        String wrongText = getString(R.string.results_wrong_answers) + " " + wrongAnswers;
-        binding.tvWrongAnswers.setText(wrongText);
+        String summaryText = getString(R.string.results_summary, correctAnswers, totalQuestions);
+
+
+        binding.tvSummary.setText(summaryText);
+
+        binding.rvResults.setLayoutManager(new LinearLayoutManager(this));
+
+
+        ResultsAdapter adapter = new ResultsAdapter(questionList);
+        binding.rvResults.setAdapter(adapter);
+
+        binding.btnExit.setOnClickListener(v -> finishAffinity());
+        binding.btnRestart.setOnClickListener(v -> {
+            Intent intent = new Intent(this, QuizActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+
+            startActivity(intent);
+            finish();
+        });
+
     }
+
 }
+
