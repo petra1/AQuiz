@@ -3,6 +3,7 @@
 
     <!-- UI Strings -->
     <string name="title_questions">Questions</string>
+    <string name="question_progress_text">Question %1$d of %2$d</string>
     <string name="button_submit">Submit</string>
     <string name="quiz_finished">Quiz Finished</string>
     <string name="results">Results</string>

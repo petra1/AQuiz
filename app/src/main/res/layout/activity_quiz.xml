@@ -23,12 +23,21 @@
             android:textColor="@color/white"
             android:textSize="60sp" />
 
+        <!-- New TextView for the progress text -->
+        <TextView
+            android:id="@+id/tv_question_progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            tools:text="Question 1 of 8" />
+
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="16dp" 
             android:layout_marginEnd="8dp"
             app:cardCornerRadius="25sp">
 

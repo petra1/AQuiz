@@ -1,8 +1,7 @@
 package ch.ritter1.apps.aquiz;
 
 import android.content.Intent;
-import android.os.Bundle;
-import android.widget.Toast;
+import android.os.Bundle;import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,7 +18,7 @@ import ch.ritter1.apps.aquiz.databinding.ActivityQuizBinding;
 public class QuizActivity extends AppCompatActivity {
     private ActivityQuizBinding binding;
     private DatabaseHelper dbHelper;
-    private List<Question>  questionList;
+    private List<Question> questionList;
     private int currentQuestionIndex = 0;
 
     @Override
@@ -42,15 +41,15 @@ public class QuizActivity extends AppCompatActivity {
         if (questionList != null && !questionList.isEmpty()) {
             showQuestion();
         }
+
         binding.btnSubmit.setOnClickListener(v -> {
             int selectedId = binding.rgAnswers.getCheckedRadioButtonId();
 
-            // Check if an answer has been selected
             if (selectedId == -1) {
-                // No answer selected, show a toast message and do nothing else
                 Toast.makeText(QuizActivity.this, R.string.toast_no_answer, Toast.LENGTH_SHORT).show();
-                return; // Stop further execution
+                return;
             }
+
             int userAnswer = -1;
             if (selectedId == binding.rbAnswer1.getId()) {
                 userAnswer = 0;
@@ -77,14 +76,24 @@ public class QuizActivity extends AppCompatActivity {
                 intent.putParcelableArrayListExtra("EXTRA_QUESTIONS", new ArrayList<>(questionList));
                 startActivity(intent);
             }
-
-
         });
     }
 
+    // --- THIS METHOD IS NOW UPDATED ---
     private void showQuestion() {
+        // Clear the previous selection
         binding.rgAnswers.clearCheck();
+
+        // Get the current question
         Question currentQuestion = questionList.get(currentQuestionIndex);
+
+        // Set the question progress text
+        int currentQuestionNumber = currentQuestionIndex + 1;
+        int totalQuestions = questionList.size();
+        String progressText = getString(R.string.question_progress_text, currentQuestionNumber, totalQuestions);
+        binding.tvQuestionProgress.setText(progressText);
+
+        // Set the question and answer texts
         binding.tvQuestionText.setText(currentQuestion.getQuestion());
         binding.rbAnswer1.setText(currentQuestion.getAnswer1());
         binding.rbAnswer2.setText(currentQuestion.getAnswer2());
