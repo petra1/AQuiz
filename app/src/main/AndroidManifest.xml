@@ -24,6 +24,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <meta-data
+            android:name="com.google.android.gms.fonts"
+            android:resource="@array/com_google_android_gms_fonts_certs" />
     </application>
 
 </manifest>

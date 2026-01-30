@@ -8,7 +8,22 @@
     <color name="answer_wrong_red">#FF2500</color>
 
     <!-- Farben für den Hintergrund-Gradienten -->
-            <color name="gradient_start_green">#006400</color>
+    <color name="gradient_start_green">#006400</color>
     <color name="gradient_center_green">#369236</color>
     <color name="gradient_end_green">#5BC65B</color>
+
+    <!-- Alternatives Farbschema: Blau -->
+    <!--
+    <color name="gradient_start_blue">#00008B</color>
+    <color name="gradient_center_blue">#0000CD</color>
+    <color name="gradient_end_blue">#4169E1</color>
+    -->
+
+    <!-- Alternatives Farbschema: Lila -->
+    <!--
+    <color name="gradient_start_purple">#4B0082</color>
+    <color name="gradient_center_purple">#8A2BE2</color>
+    <color name="gradient_end_purple">#9370DB</color>
+    -->
+
 </resources>
