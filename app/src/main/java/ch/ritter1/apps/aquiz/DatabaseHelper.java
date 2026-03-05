@@ -12,7 +12,7 @@ import java.util.List;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
     static final String DATABASE_NAME = "questions.db";
-    private static final int DATABASE_VERSION = 2;
+    private static final int DATABASE_VERSION = 3; // <-- Version erhöht
     static final String DATABASE_TABLE = "questions";
     static final String COLUMN_ID = "id";
     static final String COLUMN_QUESTION = "question";
@@ -92,6 +92,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 3
         );
         addQuestion(q4);
+
         Question q5 = new Question(
                 context.getString(R.string.q5_text),
                 context.getString(R.string.q5_answer1),
@@ -110,6 +111,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 1
         );
         addQuestion(q6);
+        /*
         Question q7 = new Question(
                 context.getString(R.string.q7_text),
                 context.getString(R.string.q7_answer1),
@@ -128,7 +130,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 3
         );
         addQuestion(q8);
-
+        */
 
     }
 

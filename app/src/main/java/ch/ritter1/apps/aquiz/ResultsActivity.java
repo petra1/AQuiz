@@ -3,11 +3,12 @@ package ch.ritter1.apps.aquiz;
 import android.content.Intent;
 import android.os.Bundle;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.core.view.WindowInsetsControllerCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import java.util.List;
@@ -21,10 +22,18 @@ public class ResultsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
+        // Manually enable edge-to-edge display
+        WindowCompat.setDecorFitsSystemWindows(getWindow(), false);
 
         binding = ActivityResultsBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        // Set status bar icons to be light. We do this after setting the content view.
+        WindowInsetsControllerCompat windowInsetsController =
+                WindowCompat.getInsetsController(getWindow(), binding.getRoot());
+        if (windowInsetsController != null) {
+            windowInsetsController.setAppearanceLightStatusBars(false);
+        }
 
         ViewCompat.setOnApplyWindowInsetsListener(binding.main, (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
@@ -69,4 +78,3 @@ public class ResultsActivity extends AppCompatActivity {
     }
 
 }
-
