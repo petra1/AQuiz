@@ -7,10 +7,10 @@
     <color name="answer_correct_green">#4CAF50</color>
     <color name="answer_wrong_red">#FF2500</color>
 
-    <!-- Farben für den Hintergrund-Gradienten -->
-    <color name="gradient_start_green">#006400</color>
-    <color name="gradient_center_green">#369236</color>
-    <color name="gradient_end_green">#5BC65B</color>
+    <!-- Farben für den Hintergrund-Gradienten (Lila Schema für variant-5) -->
+    <color name="gradient_start_green">#4B0082</color>
+    <color name="gradient_center_green">#8A2BE2</color>
+    <color name="gradient_end_green">#BB86FC</color>
 
     <!-- Alternatives Farbschema: Blau -->
     <!--
@@ -19,8 +19,7 @@
     <color name="gradient_end_blue">#4169E1</color>
     -->
 
-    <!-- Alternatives Farbschema: Lila -->
-    <!--
+    <!-- Alternatives Farbschema: Lila (Referenz) -->
     <color name="gradient_start_purple">#4B0082</color>
     <color name="gradient_center_purple">#8A2BE2</color>
     <color name="gradient_end_purple">#9370DB</color>
