@@ -20,7 +20,10 @@ For the testing phase, five specific variants of the app are generated. Each var
 - Consistency Rate per error type and tool.
 - Documentation of all identified inconsistencies.
 
-
+# Organisation of this Repro
+‘main’ Branch: Contains the baseline version of the app as a reference
+Variant Branch: Each contains the source code of the specific version
+Documentation: Each brinch includes it own README witch descrobed the modifications made to that specific variant, accompanied by screenshots to illustrate the changes.
 
 
 
