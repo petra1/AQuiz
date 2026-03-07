@@ -15,8 +15,17 @@ During development, accessibility was deliberately neglected to ensure the prese
 For the testing phase, five specific variants of the app are generated. Each variant is evaluated using three different automated accessibility testing tools. The results are then compared to determine the level of consistency between the tools.
 
 # Data Collection
-The following data points are documented:
-Test Matrix: Variant × Tool × Error Type.
-Consistency Rate per error type and tool.
-Documentation of all identified inconsistencies.
+- The following data points are documented:
+- Test Matrix: Variant × Tool × Error Type.
+- Consistency Rate per error type and tool.
+- Documentation of all identified inconsistencies.
+
+
+
+
+
+<img width="200" height="400" alt="Screenshot_question_screen" src="https://github.com/user-attachments/assets/e1849854-7c63-4720-be7c-958d41e5037d" />
+<img width="200" height="400" alt="Screenshot_result_screen" src="https://github.com/user-attachments/assets/fe89e68d-9079-4a47-bf73-1405a1d33e81" />
+
+
 
