@@ -124,40 +124,6 @@
                 tools:text="Web Content Accessibility Guidelines" />
         </RadioGroup>
 
-        <!--
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_submit_old"
-            android:layout_width="wrap_content"
-            android:layout_height="26dp"
-            android:layout_margin="20dp"
-            android:layout_marginTop="40dp"
-            android:paddingStart="16dp"
-            android:paddingEnd="16dp"
-            android:text="@string/button_submit"
-            android:background="@color/white"
-            android:textColor="@color/gradient_end_green"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <ImageView
-            android:id="@+id/iv_logo_old"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="40dp"
-            android:background="@drawable/logo_background"
-            android:src="@drawable/ic_logo_foreground" />
-        -->
-
-        <ImageView
-            android:id="@+id/iv_logo"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_marginTop="10dp"
-            android:padding="10dp"
-            android:background="@drawable/logo_background"
-            android:src="@drawable/ic_logo_foreground" />
-
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_submit"
             android:layout_width="wrap_content"
@@ -170,6 +136,15 @@
             android:textColor="@color/gradient_end_green"
             android:textSize="20sp"
             android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/iv_logo"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="10dp"
+            android:padding="10dp"
+            android:background="@drawable/logo_background"
+            android:src="@drawable/ic_logo_foreground" />
 
     </LinearLayout>
 </layout>
