@@ -1,4 +1,5 @@
-Description of the Test Procedure for Worksheet 5
+Description of the Test Procedure 
+
 To verify the consistency of results produced by automated accessibility tools, a dedicated application titled ‘Quiz’ was developed. This app features six questions regarding the Web Content Accessibility Guidelines (WCAG), each with four multiple-choice answers.
 The application was engineered so that twelve different variants could theoretically be generated with minimal effort—simply by toggling code comments—without altering the app's core functionality. Only the layout undergoes slight modifications between versions.
 During development, accessibility was deliberately neglected to ensure the presence of the following issues:
