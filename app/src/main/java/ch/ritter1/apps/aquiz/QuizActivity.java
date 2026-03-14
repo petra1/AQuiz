@@ -1,8 +1,10 @@
 package ch.ritter1.apps.aquiz;
 
 import android.content.Intent;
-import android.os.Bundle;import android.widget.Toast;
+import android.os.Bundle;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.splashscreen.SplashScreen;
@@ -17,6 +19,9 @@ import java.util.List;
 import ch.ritter1.apps.aquiz.databinding.ActivityQuizBinding;
 
 public class QuizActivity extends AppCompatActivity {
+    private static final String KEY_CURRENT_INDEX = "current_question_index";
+    private static final String KEY_QUESTION_LIST = "question_list";
+
     private ActivityQuizBinding binding;
     private DatabaseHelper dbHelper;
     private List<Question> questionList;
@@ -44,8 +49,17 @@ public class QuizActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
         dbHelper = new DatabaseHelper(this);
-        questionList = dbHelper.getAllQuestions();
+
+        if (savedInstanceState != null) {
+            // Spielstand wiederherstellen
+            currentQuestionIndex = savedInstanceState.getInt(KEY_CURRENT_INDEX);
+            questionList = savedInstanceState.getParcelableArrayList(KEY_QUESTION_LIST);
+        } else {
+            // Erster Start: Fragen aus DB laden
+            questionList = dbHelper.getAllQuestions();
+        }
 
         if (questionList != null && !questionList.isEmpty()) {
             showQuestion();
@@ -88,7 +102,14 @@ public class QuizActivity extends AppCompatActivity {
         });
     }
 
-    // --- THIS METHOD IS NOW UPDATED ---
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        // Aktuellen Index und die Liste der Fragen (inkl. Antworten) speichern
+        outState.putInt(KEY_CURRENT_INDEX, currentQuestionIndex);
+        outState.putParcelableArrayList(KEY_QUESTION_LIST, new ArrayList<>(questionList));
+    }
+
     private void showQuestion() {
         // Clear the previous selection
         binding.rgAnswers.clearCheck();
